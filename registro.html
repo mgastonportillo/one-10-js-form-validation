@@ -34,7 +34,7 @@
                         <span class="input-message-error">This field is not valid</span>
                     </div>
                     <div class="input-container">
-                        <input name="password" id="password" class="input" type="password" placeholder="Contraseña" required minlength="6" maxlength="12">
+                        <input name="password" id="password" class="input" type="password" placeholder="Contraseña" title="6-12 characters. Must contain a lowercase letter, an uppercase letter, a number and can't contain special characters" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$" required>
                         <label class="input-label" for="password">Password</label>
                         <span class="input-message-error">This field is not valid</span>
                     </div>
