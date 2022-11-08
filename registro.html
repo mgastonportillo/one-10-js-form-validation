@@ -43,6 +43,7 @@
 								class="input"
 								type="text"
 								placeholder="Nombre"
+								data-type="name"
 								required
 							/>
 							<label class="input-label" for="name">Full name</label>
@@ -55,6 +56,7 @@
 								class="input"
 								type="email"
 								placeholder="Email"
+								data-type="email"
 								required
 							/>
 							<label class="input-label" for="email">Email</label>
@@ -69,6 +71,7 @@
 								placeholder="Contraseña"
 								title="6-12 characters. Must contain a lowercase letter, an uppercase letter, a number and can't contain special characters"
 								pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+								data-type="password"
 								required
 							/>
 							<label class="input-label" for="password">Password</label>
@@ -84,8 +87,8 @@
 								class="input"
 								type="date"
 								placeholder="Fecha de nacimento"
-								required
 								data-type="birth"
+								required
 							/>
 							<label class="input-label" for="birth">Date of birth</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -143,6 +146,6 @@
 			</section>
 		</main>
 
-		<script src="./assets/js/validate.js"></script>
+		<script type="module" src="./assets/js/app.js"></script>
 	</body>
 </html>
