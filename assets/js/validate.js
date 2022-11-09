@@ -1,8 +1,8 @@
 export const validate = (input) => {
 	const inputType = input.dataset.type;
 
-	if (VALIDATORS[inputType]) {
-		VALIDATORS[inputType](input);
+	if (VALIDATOR_CLASSES[inputType]) {
+		VALIDATOR_CLASSES[inputType](input);
 	}
 
 	if (input.validity.valid) {
@@ -15,18 +15,20 @@ export const validate = (input) => {
 	}
 };
 
-const VALIDATORS = {
+// Types definition
+
+const VALIDATOR_CLASSES = {
 	birth: (input) => validateBirth(input),
 };
 
-const ERROR_TYPES = [
+const ERROR_TYPE_CLASSES = [
 	"valueMissing",
 	"typeMismatch",
 	"patternMismatch",
 	"customError",
 ];
 
-const ERROR_MESSAGES = {
+const ERROR_MESSAGE_CLASSES = {
 	name: {
 		valueMissing: "Name cannot be empty",
 	},
@@ -61,19 +63,19 @@ const ERROR_MESSAGES = {
 	},
 };
 
-// a
+// Display error message
 
 const displayErrorMessage = (inputType, input) => {
 	let message = "";
-	ERROR_TYPES.forEach((error) => {
+	ERROR_TYPE_CLASSES.forEach((error) => {
 		if (input.validity[error]) {
-			message = ERROR_MESSAGES[inputType][error];
+			message = ERROR_MESSAGE_CLASSES[inputType][error];
 		}
 	});
 	return message;
 };
 
-// birth
+// Age validation
 
 const validateBirth = (input) => {
 	const userDate = new Date(input.value);
@@ -93,5 +95,3 @@ const validAge = (date) => {
 	);
 	return diff <= currentDate;
 };
-
-// other

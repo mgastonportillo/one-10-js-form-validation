@@ -1,9 +1,11 @@
 import { validate } from "./validate.js";
 
-const inputs = document.querySelectorAll("input");
+(() => {
+	const inputs = document.querySelectorAll("input");
 
-inputs.forEach((input) => {
-	input.addEventListener("blur", (input) => {
-		validate(input.target);
+	inputs.forEach((input) => {
+		input.addEventListener("blur", (input) => {
+			validate(input.target);
+		});
 	});
-});
+})();
