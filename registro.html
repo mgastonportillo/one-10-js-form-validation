@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Petshop | Sign Up</title>
+		<title>Sign Up Validations</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
 			rel="stylesheet"
@@ -13,27 +13,16 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./assets/css/base/base.css" />
-		<link rel="stylesheet" href="./assets/css/registro.css" />
 		<link rel="stylesheet" href="./assets/css/componentes/card.css" />
 		<link rel="stylesheet" href="./assets/css/componentes/inputs.css" />
 		<link rel="stylesheet" href="./assets/css/componentes/button.css" />
 	</head>
+
 	<body>
 		<main class="container flex flex--column flex--center">
-			<div class="cadastro-cabecalho">
-				<img
-					src="./assets/img/doguito.svg"
-					alt="Logo Doguito"
-					class="registry-header__logo"
-				/>
-				<h1 class="registry-header__title">PetShop</h1>
-			</div>
-			<section class="cartao">
-				<h2 class="card__title">Sign up</h2>
-				<form
-					action="./registro_concluido.html"
-					class="formulario flex flex--column"
-				>
+			<section class="card">
+				<h2 class="card__title">Sign Up Validations</h2>
+				<form action="./registro_concluido.html" class="form flex flex--column">
 					<fieldset>
 						<legend class="form__label">Basic information</legend>
 						<div class="input-container">
@@ -42,9 +31,9 @@
 								id="name"
 								class="input"
 								type="text"
-								placeholder="Nombre"
-								data-type="name"
+								placeholder="Name"
 								required
+								data-type="name"
 							/>
 							<label class="input-label" for="name">Full name</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -56,8 +45,8 @@
 								class="input"
 								type="email"
 								placeholder="Email"
-								data-type="email"
 								required
+								data-type="email"
 							/>
 							<label class="input-label" for="email">Email</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -68,11 +57,11 @@
 								id="password"
 								class="input"
 								type="password"
-								placeholder="Contraseña"
+								placeholder="Password"
 								title="6-12 characters. Must contain a lowercase letter, an uppercase letter, a number and can't contain special characters"
 								pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
-								data-type="password"
 								required
+								data-type="password"
 							/>
 							<label class="input-label" for="password">Password</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -86,9 +75,9 @@
 								id="birth"
 								class="input"
 								type="date"
-								placeholder="Fecha de nacimento"
-								data-type="birth"
+								placeholder="Date of birth"
 								required
+								data-type="birth"
 							/>
 							<label class="input-label" for="birth">Date of birth</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -99,7 +88,11 @@
 								id="phoneNumber"
 								class="input"
 								type="text"
-								placeholder="Número telefónico"
+								placeholder="Phone number"
+								pattern="\d{10}"
+								maxlength="10"
+								required
+								data-type="phoneNumber"
 							/>
 							<label class="input-label" for="phoneNumber">Phone number</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -114,6 +107,9 @@
 								class="input"
 								type="text"
 								placeholder="CEP"
+								pattern="[\s\S]{10,40}"
+								required
+								data-type="address"
 							/>
 							<label class="input-label" for="cep">Full address</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -124,7 +120,10 @@
 								id="city"
 								class="input"
 								type="text"
-								placeholder="Ciudad"
+								placeholder="City"
+								pattern="[\s\S]{10,40}"
+								required
+								data-type="city"
 							/>
 							<label class="input-label" for="city">City</label>
 							<span class="input-message-error">This field is not valid</span>
@@ -135,7 +134,10 @@
 								id="state"
 								class="input"
 								type="text"
-								placeholder="Estado"
+								placeholder="Province"
+								pattern="[\s\S]{10,40}"
+								required
+								data-type="province"
 							/>
 							<label class="input-label" for="state">Province</label>
 							<span class="input-message-error">This field is not valid</span>

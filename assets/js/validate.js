@@ -28,20 +28,36 @@ const ERROR_TYPES = [
 
 const ERROR_MESSAGES = {
 	name: {
-		valueMissing: "Name field cannot be empty",
+		valueMissing: "Name cannot be empty",
 	},
 	email: {
-		valueMissing: "Email field cannot be empty",
-		typeMismatch: "Make sure you are entering the right email",
+		valueMissing: "Email cannot be empty",
+		typeMismatch: "Make sure you are typing down the email address properly",
 	},
 	password: {
-		valueMissing: "Password field cannot be empty",
+		valueMissing: "Password cannot be empty",
 		patternMismatch:
 			"6-12 characters. Must contain a lowercase letter, an uppercase letter, a number and cannot contain special characters",
 	},
 	birth: {
-		valueMissing: "Date of birth field cannot be empty",
+		valueMissing: "Date of birth cannot be empty",
 		customError: "Must be at least 18 years old",
+	},
+	phoneNumber: {
+		valueMissing: "Phone number cannot be empty",
+		patternMismatch: "10 numbers expected",
+	},
+	address: {
+		valueMissing: "Address cannot be empty",
+		patternMismatch: "Address must contain 10-40 characters",
+	},
+	city: {
+		valueMissing: "City cannot be empty",
+		patternMismatch: "City must contain 10-40 characters",
+	},
+	province: {
+		valueMissing: "Province cannot be empty",
+		patternMismatch: "Province must contain 10-40 characters",
 	},
 };
 
